@@ -8,12 +8,12 @@ function TransactionsContainer() {
   const [query, setQuery] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3000/transactions")
-      .then((res) => res.json())
-      .then((transactionList) => {
-        setTransactions(transactionList);
-      });
+    fetch(`http://localhost:3000/transactions`)
+      .then((response) => response.json())
+      .then((transaction) => setTransactions(transaction))
+      .catch((error) => console.log(error));
   }, [query]);
+  
 
   function handleSearch(e) {
     setQuery(e.target.value);

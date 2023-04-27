@@ -1,12 +1,14 @@
 import React,{useState}from "react";
 
 function AddTransaction() {
+  
     const [date, setDate] = useState("")
   const [description, setDescription] = useState("")
   const [category, setCategory] = useState("")
   const [amount, setAmount] = useState("")
 
   function handleSubmit (e){
+    e.preventDefault()
     fetch(" http://localhost:3000/transactions",{
         method: "POST",
         headers: {
