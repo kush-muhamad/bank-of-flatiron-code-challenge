@@ -2,7 +2,8 @@ import React from "react";
 import Transaction from "./Transaction";
 
 function TransactionList({ transaction }) {
-  const transactionList = transaction.map((transaction) => (
+  //always map
+  const transactionList = transaction && transaction.map((transaction) => (
     <Transaction
       key={transaction.id}
       date={transaction.date}
